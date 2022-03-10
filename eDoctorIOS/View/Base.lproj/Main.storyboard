@@ -192,7 +192,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZC-xV-oWA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OLS-Sb-OJj">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OLS-Sb-OJj">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI4-kY-7Jp" customClass="BasicProfile" customModule="eDoctorIOS" customModuleProvider="target">
