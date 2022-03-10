@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicProfile" customModule="eDoctorIOS" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageView" destination="ybN-PQ-CHw" id="B77-eU-7EG"/>
+                <outlet property="birthDayLabel" destination="6Cy-b6-wpB" id="Yh8-VK-e9J"/>
+                <outlet property="genderLabel" destination="QPL-Tm-SzC" id="9KR-kl-ud8"/>
+                <outlet property="phoneNumberLabel" destination="BIe-7f-bYJ" id="7Zg-E7-hNN"/>
+                <outlet property="userNameLabel" destination="z04-Qx-kdI" id="FxP-3n-44x"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="SCs-gF-622">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="njS-yO-ywV">
+                    <rect key="frame" x="10" y="10" width="404" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybN-PQ-CHw" customClass="CircleUIImageView" customModule="eDoctorIOS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="Djp-KE-b79"/>
+                                <constraint firstAttribute="width" constant="120" id="x1G-JJ-wXy"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oWA-8f-T6F">
+                            <rect key="frame" x="140" y="0.0" width="264" height="120"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên người dùng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z04-Qx-kdI" customClass="cTitleLabel" customModule="eDoctorIOS" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="118.5" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="lqc-pL-FGt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày sinh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cy-b6-wpB" customClass="cLargeLabel" customModule="eDoctorIOS" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="32" width="75.5" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75.5" id="iKr-B8-IQp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giới tính" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPL-Tm-SzC" customClass="cNormalLabel" customModule="eDoctorIOS" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="64" width="62.5" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="62.5" id="lBZ-B2-3wP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Sđt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIe-7f-bYJ" customClass="cSmallLabel" customModule="eDoctorIOS" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="96" width="27" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="27" id="7CC-rT-Fck"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ybN-PQ-CHw" firstAttribute="top" secondItem="njS-yO-ywV" secondAttribute="top" id="JOu-qf-yAd"/>
+                        <constraint firstItem="ybN-PQ-CHw" firstAttribute="leading" secondItem="njS-yO-ywV" secondAttribute="leading" id="fHh-nA-hBA"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="43c-xF-2wX"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="njS-yO-ywV" secondAttribute="trailing" constant="10" id="KnR-Wy-HOl"/>
+                <constraint firstItem="njS-yO-ywV" firstAttribute="leading" secondItem="SCs-gF-622" secondAttribute="leading" constant="10" id="eHG-qS-Okq"/>
+                <constraint firstItem="njS-yO-ywV" firstAttribute="top" secondItem="SCs-gF-622" secondAttribute="top" constant="10" id="s8O-CG-roF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="100.00000000000001" y="-848.4375"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
