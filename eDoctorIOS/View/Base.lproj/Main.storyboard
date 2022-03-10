@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tE-hr-iUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1448" y="-536"/>
+            <point key="canvasLocation" x="-1229" y="-1139"/>
         </scene>
         <!--Tab Controller-->
         <scene sceneID="Cty-yI-G03">
@@ -158,13 +158,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" translatesAutoresizingMaskIntoConstraints="NO" id="GSY-ui-Vco">
                                 <rect key="frame" x="0.0" y="24" width="414" height="872"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="Ho4-K0-WUi" customClass="BasicProfile" customModule="eDoctorIOS" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="20" width="374" height="141"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="l8F-Su-ShU"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="me0-Na-V1e"/>
                             </scrollView>
@@ -177,7 +170,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="basicProfile" destination="Ho4-K0-WUi" id="lI7-et-ky0"/>
                         <outlet property="scrollview" destination="GSY-ui-Vco" id="eWs-bW-nWU"/>
                         <segue destination="4FC-MD-ReZ" kind="presentation" identifier="homeToLogin" id="UU8-9e-DGw"/>
                     </connections>
@@ -194,35 +186,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-mk-sZB">
-                                <rect key="frame" x="166" y="426.5" width="82" height="43"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="loginButtonPressed:" destination="18b-Xq-CKA" eventType="touchUpInside" id="wGZ-CW-02h"/>
-                                    <action selector="loginPressed:" destination="Jgv-0L-PZ4" eventType="touchUpInside" id="YPE-cB-S9T"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nU6-1g-KfO">
-                                <rect key="frame" x="156" y="477" width="102" height="43"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LogOut">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="setNotLogin:" destination="Jgv-0L-PZ4" eventType="touchUpInside" id="uxj-dh-WU8"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uY0-un-yjb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZC-xV-oWA">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OLS-Sb-OJj">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI4-kY-7Jp" customClass="BasicProfile" customModule="eDoctorIOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="OLS-Sb-OJj" firstAttribute="height" secondItem="KZC-xV-oWA" secondAttribute="height" multiplier="0.246002" priority="250" id="3JM-rm-nNJ"/>
+                                            <constraint firstItem="OLS-Sb-OJj" firstAttribute="top" secondItem="KZC-xV-oWA" secondAttribute="top" id="B7z-WX-evC"/>
+                                            <constraint firstItem="OLS-Sb-OJj" firstAttribute="leading" secondItem="KZC-xV-oWA" secondAttribute="leading" id="HSL-EQ-Gam"/>
+                                            <constraint firstAttribute="trailing" secondItem="OLS-Sb-OJj" secondAttribute="trailing" id="P2j-O2-fBG"/>
+                                            <constraint firstItem="OLS-Sb-OJj" firstAttribute="width" secondItem="KZC-xV-oWA" secondAttribute="width" id="Zjg-0R-fjD"/>
+                                            <constraint firstAttribute="bottom" secondItem="OLS-Sb-OJj" secondAttribute="bottom" id="h5d-cd-mIr"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KZC-xV-oWA" secondAttribute="trailing" id="JTJ-7B-EnF"/>
+                                    <constraint firstItem="KZC-xV-oWA" firstAttribute="width" secondItem="uY0-un-yjb" secondAttribute="width" id="Ni2-aL-fGo"/>
+                                    <constraint firstItem="KZC-xV-oWA" firstAttribute="height" secondItem="uY0-un-yjb" secondAttribute="height" priority="250" id="RgO-7b-yxJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="KZC-xV-oWA" secondAttribute="bottom" id="Zh3-Y1-vPR"/>
+                                    <constraint firstItem="KZC-xV-oWA" firstAttribute="leading" secondItem="uY0-un-yjb" secondAttribute="leading" id="dSo-kb-mwL"/>
+                                    <constraint firstItem="KZC-xV-oWA" firstAttribute="top" secondItem="uY0-un-yjb" secondAttribute="top" id="uZL-Fn-xfE"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rW8-Sj-ecL"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QkE-mk-sZB" firstAttribute="centerY" secondItem="tJA-Np-Nz0" secondAttribute="centerY" id="8eS-At-Xln"/>
-                            <constraint firstItem="nU6-1g-KfO" firstAttribute="centerX" secondItem="QkE-mk-sZB" secondAttribute="centerX" id="OSI-z8-j51"/>
-                            <constraint firstItem="nU6-1g-KfO" firstAttribute="top" secondItem="QkE-mk-sZB" secondAttribute="bottom" constant="7.5" id="PzO-QP-5JB"/>
-                            <constraint firstItem="QkE-mk-sZB" firstAttribute="centerX" secondItem="tJA-Np-Nz0" secondAttribute="centerX" id="cdd-v3-7ze"/>
+                            <constraint firstItem="uY0-un-yjb" firstAttribute="leading" secondItem="rW8-Sj-ecL" secondAttribute="leading" id="5vZ-2h-AG5"/>
+                            <constraint firstItem="uY0-un-yjb" firstAttribute="top" secondItem="tJA-Np-Nz0" secondAttribute="top" id="LZk-WM-GWZ"/>
+                            <constraint firstItem="uY0-un-yjb" firstAttribute="bottom" secondItem="rW8-Sj-ecL" secondAttribute="bottom" id="gEs-7y-x0p"/>
+                            <constraint firstItem="uY0-un-yjb" firstAttribute="trailing" secondItem="rW8-Sj-ecL" secondAttribute="trailing" id="k0p-MM-wy6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cá nhân" image="icon-profile" selectedImage="icon-profile-active" id="JvW-9o-TW8"/>
@@ -234,11 +241,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vp1-MR-R1h" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="82"/>
+            <point key="canvasLocation" x="763.768115942029" y="81.696428571428569"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UU8-9e-DGw"/>
+        <segue reference="RLc-N5-MQL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon-home" width="24" height="24"/>

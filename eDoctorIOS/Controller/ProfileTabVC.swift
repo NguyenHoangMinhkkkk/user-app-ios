@@ -10,17 +10,8 @@ import UIKit
 class ProfileTabVC: UIViewController, UIScrollViewDelegate {
     var requestData = ApiManager()
 
-    lazy var scrollView: UIScrollView = {
-        let scroll = UIScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.delegate = self
-        return scroll
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.addSubview(scrollView)
     }
 
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -34,6 +25,7 @@ class ProfileTabVC: UIViewController, UIScrollViewDelegate {
 
     @IBAction func setNotLogin(_ sender: UIButton) {
         KeychainHelper.standard.delete(service: KeyChainConst.KeyChainLoginService, loginMethod: KeyChainConst.EdoctorSmsLogin)
+        UserDefaults.standard.removeObject(forKey: UserDefaultKey.ConsumerData)
         UserDefaults.standard.set(false, forKey: UserDefaultKey.IsLogged)
         UserDefaults.standard.synchronize()
         print("Log OUT")

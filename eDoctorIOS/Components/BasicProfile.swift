@@ -17,7 +17,7 @@ class BasicProfile: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-//        self.isHidden = true
+        self.isHidden = true
         getConsumerData()
     }
 
@@ -40,10 +40,18 @@ class BasicProfile: UIView {
                 if let safeProfiles = consumerData.consumer?.profiles {
                     for profile in safeProfiles {
                         if profile.relation == "self" {
-                            userNameLabel.text = profile.fullName
-                            birthDayLabel.text = String("Ngày sinh: \(profile.birthDate_date)/\(profile.birthDate_month)/\(profile.birthDate_year)")
-                            phoneNumberLabel.text = String("SĐT: \(profile.phoneNumber)")
-                            genderLabel.text = profile.gender != "" ? (profile.gender == "male" ? "Nam" : "Nữ") : "--"
+                            DispatchQueue.main.async {
+                                self.userNameLabel.text = profile.fullName
+                                self.birthDayLabel.text = String("Ngày sinh: \(profile.birthDate_date)/\(profile.birthDate_month)/\(profile.birthDate_year)")
+                                self.phoneNumberLabel.text = String("SĐT: \(profile.phoneNumber ?? "Chưa cập nhật")")
+                                self.genderLabel.text = "Giới tính: \(profile.gender != "" ? (profile.gender == "male" ? "Nam" : "Nữ") : "--")"
+                                if let safeUrl = profile.avatar?.versions?.original?.url {
+                                    let url = URL(string: safeUrl)!
+                                    let data = try? Data(contentsOf: url)
+                                    self.avatarImageView.image = UIImage(data: data!)
+                                }
+                                self.isHidden = false
+                            }
                         }
                     }
                 }

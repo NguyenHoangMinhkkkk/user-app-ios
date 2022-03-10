@@ -20,21 +20,25 @@ struct ConsumerData: Codable {
 
 struct Profile: Codable {
     var id: String = ""
-    var avatar: Avatar
+    var avatar: Avatar?
     var birthDate_date: Int = 0
     var birthDate_month: Int = 0
     var birthDate_year: Int = 0
     var gender: String = ""
     var relation: String = ""
     var fullName: String = ""
-    var phoneNumber: String = ""
+    var phoneNumber: String?
 }
 
 struct Avatar: Codable {
     var id: String = ""
-    struct versions: Codable {
-        struct original: Codable {
-            var url = ""
-        }
-    }
+    var versions: Version?
+}
+
+struct Version: Codable {
+    var original: Original?
+}
+
+struct Original: Codable {
+    var url: String?
 }

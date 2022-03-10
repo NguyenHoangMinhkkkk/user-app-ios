@@ -76,7 +76,6 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="ybN-PQ-CHw" firstAttribute="top" secondItem="njS-yO-ywV" secondAttribute="top" id="JOu-qf-yAd"/>
-                        <constraint firstItem="ybN-PQ-CHw" firstAttribute="leading" secondItem="njS-yO-ywV" secondAttribute="leading" id="fHh-nA-hBA"/>
                     </constraints>
                 </stackView>
             </subviews>
