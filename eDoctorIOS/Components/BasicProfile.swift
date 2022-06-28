@@ -7,24 +7,53 @@
 
 import UIKit
 
-class BasicProfile: UIView {
+protocol BasicProfileDelegate {
+    func performSegueFromBasicProfile()
+}
+
+class BasicProfile: UIView, UIGestureRecognizerDelegate {
     @IBOutlet var avatarImageView: CircleUIImageView!
     @IBOutlet var userNameLabel: cTitleLabel!
     @IBOutlet var birthDayLabel: cLargeLabel!
     @IBOutlet var genderLabel: cNormalLabel!
     @IBOutlet var phoneNumberLabel: cSmallLabel!
 
+    var delegate: BasicProfileDelegate?
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-        self.isHidden = true
+        isHidden = true
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickView))
+        tapGesture.delegate = self
+        gestureRecognizers = [tapGesture]
         getConsumerData()
+        layer.borderWidth = 1
+    }
+
+    @objc func clickView() {
+        print("click profile")
+        delegate?.performSegueFromBasicProfile()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
         initAvatar()
+    }
+
+    let nibName = "BasicProfile"
+
+    func commonInit() {
+        guard let view = loadViewFromNib() else { return }
+        view.frame = bounds
+        addSubview(view)
+    }
+
+    func loadViewFromNib() -> UIView? {
+        let nib = UINib(nibName: nibName, bundle: nil)
+        return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
 
     func initAvatar() {
@@ -59,18 +88,5 @@ class BasicProfile: UIView {
         } catch {
             print("BasicProfile Get data failed.", error)
         }
-    }
-
-    let nibName = "BasicProfile"
-
-    func commonInit() {
-        guard let view = loadViewFromNib() else { return }
-        view.frame = bounds
-        addSubview(view)
-    }
-
-    func loadViewFromNib() -> UIView? {
-        let nib = UINib(nibName: nibName, bundle: nil)
-        return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
 }

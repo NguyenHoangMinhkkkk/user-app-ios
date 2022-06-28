@@ -12,6 +12,7 @@ struct SegueConst {
     static let ProfileToLogin = "profileToLogin"
     static let RootToLogin = "rootToLogin"
     static let GoToVerifyOtp = "goToVerifyOtp"
+    static let GoToProfileDetail = "goToProfileDetail"
 }
 
 enum KeyChainConst {

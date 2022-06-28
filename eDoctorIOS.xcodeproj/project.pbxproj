@@ -13,6 +13,9 @@
 		EE022E2E27D5DA3C00190596 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE022E2D27D5DA3C00190596 /* ApiManager.swift */; };
 		EE022E3027D5DAA100190596 /* ApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE022E2F27D5DAA100190596 /* ApiResponseModel.swift */; };
 		EE022E3227D5DB7000190596 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE022E3127D5DB7000190596 /* RequestHandler.swift */; };
+		EE34BDD527E0867300E8A13C /* ProfileDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE34BDD427E0867300E8A13C /* ProfileDetailVC.swift */; };
+		EE42C4CB27E18D75008658AF /* MTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42C4CA27E18D75008658AF /* MTextFieldView.swift */; };
+		EE42C4CD27E18D8C008658AF /* MTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE42C4CC27E18D8C008658AF /* MTextFieldView.xib */; };
 		EE854CFC27D6E4E700030EE0 /* VerifyOtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE854CFB27D6E4E700030EE0 /* VerifyOtpVC.swift */; };
 		EE854CFF27D6F42A00030EE0 /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE854CFE27D6F42A00030EE0 /* KeyChainHelper.swift */; };
 		EE8BD55627D886A300C9546E /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8BD55527D886A300C9546E /* Keys.swift */; };
@@ -40,6 +43,9 @@
 		EE022E2D27D5DA3C00190596 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		EE022E2F27D5DAA100190596 /* ApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseModel.swift; sourceTree = "<group>"; };
 		EE022E3127D5DB7000190596 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		EE34BDD427E0867300E8A13C /* ProfileDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailVC.swift; sourceTree = "<group>"; };
+		EE42C4CA27E18D75008658AF /* MTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTextFieldView.swift; sourceTree = "<group>"; };
+		EE42C4CC27E18D8C008658AF /* MTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTextFieldView.xib; sourceTree = "<group>"; };
 		EE854CFB27D6E4E700030EE0 /* VerifyOtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOtpVC.swift; sourceTree = "<group>"; };
 		EE854CFE27D6F42A00030EE0 /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
 		EE8BD55527D886A300C9546E /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 				EE96955227D846AC003A0D41 /* LabelText.swift */,
 				EE96955827D854D5003A0D41 /* CircleUIImageView.swift */,
 				EE8BD55927D88C2E00C9546E /* BasicProfile.swift */,
+				EE42C4CA27E18D75008658AF /* MTextFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 			children = (
 				EED20B0D27D1F8D700F6F496 /* Main.storyboard */,
 				EE8BD55727D88B7F00C9546E /* BasicProfile.xib */,
+				EE42C4CC27E18D8C008658AF /* MTextFieldView.xib */,
 				EED20B1527D1F8D800F6F496 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -161,6 +169,7 @@
 				EED20B2327D1FB7000F6F496 /* ProfileTabVC.swift */,
 				EE022E2427D5A8CF00190596 /* LoginVC.swift */,
 				EE854CFB27D6E4E700030EE0 /* VerifyOtpVC.swift */,
+				EE34BDD427E0867300E8A13C /* ProfileDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 				EE8BD55827D88B7F00C9546E /* BasicProfile.xib in Resources */,
 				EED20B1727D1F8D800F6F496 /* LaunchScreen.storyboard in Resources */,
 				EED20B1427D1F8D800F6F496 /* Assets.xcassets in Resources */,
+				EE42C4CD27E18D8C008658AF /* MTextFieldView.xib in Resources */,
 				EED20B0F27D1F8D700F6F496 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,11 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE34BDD527E0867300E8A13C /* ProfileDetailVC.swift in Sources */,
 				EED20B0C27D1F8D700F6F496 /* TabController.swift in Sources */,
 				EE8BD55627D886A300C9546E /* Keys.swift in Sources */,
 				EED20B0827D1F8D700F6F496 /* AppDelegate.swift in Sources */,
 				EE022E3227D5DB7000190596 /* RequestHandler.swift in Sources */,
 				EE022E3027D5DAA100190596 /* ApiResponseModel.swift in Sources */,
+				EE42C4CB27E18D75008658AF /* MTextFieldView.swift in Sources */,
 				EE8BD55F27D89CDC00C9546E /* ConsumerModel.swift in Sources */,
 				EE96955327D846AD003A0D41 /* LabelText.swift in Sources */,
 				EE022E2627D5A8CF00190596 /* LoginVC.swift in Sources */,

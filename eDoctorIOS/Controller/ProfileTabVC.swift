@@ -7,11 +7,20 @@
 
 import UIKit
 
-class ProfileTabVC: UIViewController, UIScrollViewDelegate {
+extension ProfileTabVC: BasicProfileDelegate {
+    func performSegueFromBasicProfile() {
+        performSegue(withIdentifier: SegueConst.GoToProfileDetail, sender: self)
+    }
+}
+
+class ProfileTabVC: UIViewController {
     var requestData = ApiManager()
+
+    @IBOutlet var basicProfile: BasicProfile!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        basicProfile.delegate = self
     }
 
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -19,8 +28,12 @@ class ProfileTabVC: UIViewController, UIScrollViewDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! LoginVC
-        destinationVC.performIdentify = "ProfileVC"
+        if let destinationVC = segue.destination as? LoginVC {
+            destinationVC.performIdentify = "ProfileVC"
+        }
+        if let destinationVC = segue.destination as? ProfileDetailVC {
+            destinationVC.performIdentify = "ProfileDetailVC"
+        }
     }
 
     @IBAction func setNotLogin(_ sender: UIButton) {
